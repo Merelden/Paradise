@@ -1,9 +1,11 @@
 <template>
-  <Tutorial/>
+<Header></Header>
 </template>
 
 <script>
+import Header from "~/components/Header";
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: { Header }
 }
 </script>
