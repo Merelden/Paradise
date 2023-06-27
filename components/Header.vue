@@ -16,7 +16,8 @@ export default {
   data() {
     return {
       links: [
-        {title: 'Home', url: '/'}
+        {title: 'Home', url: '/'},
+        {title: 'About', url: '/about'},
       ]
     }
   },

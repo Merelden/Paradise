@@ -1,17 +1,15 @@
 <template>
   <div>
     <PostsList :posts="posts" />
-    <contacts />
   </div>
 </template>
 
 <script>
-import PostsList from "../components/Blog/PostsList";
-import Contacts from "../components/Contacts";
+import PostsList from "../../components/Blog/PostsList";
 export default {
   name: 'IndexPage',
   components: {
-    PostsList, Contacts
+    PostsList
   },
   data() {
     return {
