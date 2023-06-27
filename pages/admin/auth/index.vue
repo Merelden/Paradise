@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     onSubmit () {
-      this.user.login = '',
+      this.user.login = ''
       this.user.password = ''
     }
   }
