@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-around items-center py-5">
+  <header class="flex justify-around items-center py-8">
     <Logo></Logo>
     <ul class="navbar-list">
       <li class="navbar-item" v-for="link in links" :key="link.title">

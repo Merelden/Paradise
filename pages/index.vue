@@ -1,47 +1,47 @@
 <template>
   <div>
-    <PostsList :posts="posts" />
-    <contacts />
+    <Header></Header>
+    <PostsList :posts="posts"/>
+    <contacts/>
   </div>
 </template>
 
 <script>
 import PostsList from "../components/Blog/PostsList";
 import Contacts from "../components/Contacts";
+
 export default {
   name: 'IndexPage',
   components: {
     PostsList, Contacts
   },
+  asyncData(contex) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          posts: [
+            {
+              id: 1,
+              title: '1 post',
+              description: 'lorem lorem',
+              img: 'https://i.pinimg.com/564x/be/8d/54/be8d54a3db603d273ac3db90181a1f15.jpg'
+            }
+          ]
+        })
+        reject(new Error())
+      }, 1500)
+    })
+      .then(data => {
+        return data
+      })
+      .catch(e => {
+        contex.error(e)
+      })
+  },
   data() {
     return {
-      posts: [
-        {
-          id: 1,
-          title: 'blue',
-          description: 'lorem lorem lorem lorem',
-          img: 'https://damion.club/uploads/posts/2022-09/1663995096_30-damion-club-p-tsvetnoi-fon-gradient-vkontakte-38.png'
-        },
-        {
-          id: 2,
-          title: 'red',
-          description: 'lorem lorem lorem lorem',
-          img: 'https://damion.club/uploads/posts/2022-09/1663995096_30-damion-club-p-tsvetnoi-fon-gradient-vkontakte-38.png'
-        },
-        {
-          id: 3,
-          title: 'black',
-          description: 'lorem lorem lorem lorem',
-          img: 'https://damion.club/uploads/posts/2022-09/1663995096_30-damion-club-p-tsvetnoi-fon-gradient-vkontakte-38.png'
-        },
-        {
-          id: 4,
-          title: 'white',
-          description: 'lorem lorem lorem lorem',
-          img: 'https://damion.club/uploads/posts/2022-09/1663995096_30-damion-club-p-tsvetnoi-fon-gradient-vkontakte-38.png'
-        },
-      ]
+      posts: []
     }
-  }
+  },
 }
 </script>

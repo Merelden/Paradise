@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: 'AppButton',
   props: {
     btnClass: {
       type: String,

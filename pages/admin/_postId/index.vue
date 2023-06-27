@@ -1,19 +1,16 @@
 <template>
   <div>
-    <post :post="post"></post>
-    <Comments :comments="comments"/>
-    <NewComment />
+    <NewPostFrom
+      :postEdit="post"
+      @submit="onSubmit"/>
   </div>
 </template>
 
 <script>
-import Post from "../../../components/Blog/Post";
-import NewComment from "../../../components/Comments/NewComment";
-import Comments from "../../../components/Comments/Comments";
+import NewPostFrom from '@/components/Admin/NewPostFrom'
 export default {
-  components: {
-    Post, NewComment, Comments
-  },
+  components: { NewPostFrom },
+  layout: 'admin',
   data() {
     return {
       post: {
@@ -22,11 +19,13 @@ export default {
         description: 'lorem lorem lorem lorem',
         img: 'https://damion.club/uploads/posts/2022-09/1663995096_30-damion-club-p-tsvetnoi-fon-gradient-vkontakte-38.png',
         content: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem'
-      },
-      comments: [
-        { name: 'Alex', text: 'lorem lorem lorem' },
-        { name: 'Sergey', text: 'lorem lorem lorem' }
-      ]
+      }
+    }
+  },
+  methods: {
+    onSubmit (post) {
+      console.log('Post Editing!')
+      console.log(post)
     }
   }
 }

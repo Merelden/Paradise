@@ -1,10 +1,11 @@
 <template>
-  <div class="post-list">
+  <div class="post-list flex justify-center mt-24 mb-36">
     <div class="container">
-      <div class="posts__wrapper">
+      <div class="posts__wrapper flex gap-10">
         <PostPreview
           v-for="post in posts" :key="post.id"
-        :post="post" />
+          :admin="admin"
+          :post="post" />
       </div>
     </div>
   </div>
@@ -20,8 +21,12 @@ export default {
     posts: {
       type: Array,
       required: true
+    },
+    admin: {
+      type: Boolean,
+      default: false
     }
-  }
+  },
 }
 </script>
 
