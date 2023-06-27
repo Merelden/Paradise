@@ -30,15 +30,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    module.exports = {
-      theme: {
-        extend: {
-          backgroundImage: {
-            'heroPoster' : "url('/images/aboutHeroPattern.png')"
-          }
-        }
-      }
-    }
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
